@@ -1,0 +1,19 @@
+name: Dry run CI
+
+on:
+  push: 
+    - master
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install prerequisites
+        run: |
+          pip install codespell
+          brew install hub
+      - name: Install dependencies
+        run: npm install
+      - name: Conduct a dry-run
+        run: ./bin/autofix --dry
