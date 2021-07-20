@@ -7,8 +7,19 @@ on:
 jobs:
   dry-run:
     runs-on: ubuntu-20.04
+    env:
+      # blame my .npmrc file in the repo
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.3.0
+        with:
+          #always-auth: true
+          node-version: 14.x
+          check-latest: true
+          registry-url: 'https://registry.npmjs.org'
       - name: Install prerequisites
         run: |
           pip install codespell
