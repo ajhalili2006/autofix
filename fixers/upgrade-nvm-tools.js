@@ -34,6 +34,6 @@ exports.register = async (fixers) => {
   sed ${os.type() === 'Darwin' ? '-i "" -E' : '-i -e'} "s/\\(NODE_VERSION.*\\)${pattern}/\\1${minorVersionReplacements[pattern]}/g" $dockerfile ;`;
       }).join('') +
       '\ndone',
-    description: 'Update pinned nvm versions',
+    description: 'update pinned nvm versions',
   });
 };

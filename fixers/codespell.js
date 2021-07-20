@@ -13,6 +13,6 @@ exports.register = async (fixers) => {
   fixers[1].push({
     id: 'codespell',
     cmd: 'codespell -w > /dev/null 2>&1',
-    description: 'Fix spelling mistakes',
+    description: 'fix spelling mistakes',
   });
 };

@@ -35,6 +35,6 @@ exports.register = async (fixers) => {
         return `  sed ${os.type() === 'Darwin' ? '-i "" -E' : '-i -e'} "s/\\(sdk install java \\)${pattern}/\\1${patchVersionReplacements[pattern]}/g" $dockerfile ;`;
       }).join('\n') +
       '\ndone',
-    description: 'Update pinned sdkman tool versions',
+    description: 'update pinned sdkman tool versions',
   });
 };

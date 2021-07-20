@@ -40,6 +40,6 @@ exports.register = async (fixers) => {
   sed ${os.type() === 'Darwin' ? '-i "" -E' : '-i -e'} "s/\\(mozilla\\|rr-debugger\\)\\(\\/rr\\/releases\\/download.*\\)${pattern}\\(.*\\)${pattern}/rr-debugger\\2${latest}\\3${latest}/g" $file ;`;
       }).join('') +
       '\ndone',
-    description: 'Update pinned rr version',
+    description: 'update pinned rr version',
   });
 };

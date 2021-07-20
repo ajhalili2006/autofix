@@ -14,7 +14,7 @@ exports.register = async (fixers) => {
     fixers[2].push({
       id: 'clang-tidy-' + check,
       cmd: 'run-clang-tidy -p obj-x86_64-pc-linux-gnu/ -fix -checks=-*,' + check + ' *',
-      description: 'Fix C++ bugs',
+      description: 'fix possible C++ bugs',
     });
   }
 };

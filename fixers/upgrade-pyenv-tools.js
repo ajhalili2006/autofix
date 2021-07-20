@@ -29,6 +29,6 @@ exports.register = async (fixers) => {
         return `  sed ${os.type() === 'Darwin' ? '-i "" -E' : '-i -e'} "s/\\(pyenv.*\\)${pattern}/\\1${patchVersionReplacements[pattern]}/g" $dockerfile ;`;
       }).join('\n') +
       '\ndone',
-    description: 'Update pinned pyenv versions',
+    description: 'update pinned pyenv versions',
   });
 };

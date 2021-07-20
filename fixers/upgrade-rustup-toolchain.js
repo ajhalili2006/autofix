@@ -39,6 +39,6 @@ exports.register = async (fixers) => {
   sed ${os.type() === 'Darwin' ? '-i "" -E' : '-i -e'} "s/\\(rustup.*\\)${pattern}\\([^\d]\\)/\\1${latest}\\2/g" $file ;`;
       }).join('') +
       '\ndone',
-    description: 'Update pinned rustup toolchain versions',
+    description: 'update pinned rustup toolchain versions',
   });
 };

@@ -56,6 +56,6 @@ exports.register = async (fixers) => {
         return `  sed ${os.type() === 'Darwin' ? '-i "" -E' : '-i -e'} "s/${pattern}/${versionReplacements[pattern]}/g" $dockerfile ;`;
       }).join('\n') +
       '\ndone',
-    description: 'Update pinned Go module versions',
+    description: 'update pinned Go module versions',
   });
 };

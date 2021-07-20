@@ -8,6 +8,6 @@ exports.register = async (fixers) => {
     id: 'trailing-spaces',
     // Fix only non-binary files. Source: https://unix.stackexchange.com/a/36240
     cmd: `git grep -I --name-only -z -e '' | xargs -0 sed ${os.type() === 'Darwin' ? '-i "" -E' : '-i -e'} "s/[[:space:]]*$//"`,
-    description: 'Fix trailing spaces',
+    description: 'fix trailing spaces',
   });
 };
